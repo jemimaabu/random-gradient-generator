@@ -8,13 +8,14 @@ function randomColorGenerator() {
         var randomIndex = Math.floor(Math.random()*characters.length);
         randomColorArray.push(characters[randomIndex])
     }
-    return randomColorArray.join("");
+    return `#${randomColorArray.join("")}`;
 }
 
 function randomGradient() {
     var color1 = randomColorGenerator();
     var color2 = randomColorGenerator();
 
-    gradientBackground.style.background = `linear-gradient(to right, #${color1}, #${color2})`;
-    gradientDisplay.innerHTML = `linear-gradient(to right, #${color1}, #${color2})`;
+    gradientBackground.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+    document.getElementById("color-1").innerHTML = color1;
+    document.getElementById("color-2").innerHTML = color2;
 }
