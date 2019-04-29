@@ -1,0 +1,7 @@
+body {
+    margin: 0;
+}
+#gradient-background {
+    height: 50vh;
+    background: linear-gradient(to right, #fff000, #000fff)
+}
