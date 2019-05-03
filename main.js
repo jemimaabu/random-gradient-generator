@@ -1,3 +1,13 @@
+/**
+ * To-do:
+ * Include save gradient option
+ * Include copy gradient option
+ * Include dropdown for gradient movement
+ * Include edit option for colors
+ * Include color display next to selected color
+ * Include multiple gradient?
+ */
+
 var gradientBackground = document.getElementById("gradient-background");
 var gradientDisplay = document.getElementById("gradient-display");
 
