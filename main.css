@@ -42,6 +42,7 @@ main, header {
 #color-2-display {
 	background-color: var(--color-2);
 }
+
 /* Button Styling */
 button {
   display: inline-block;
