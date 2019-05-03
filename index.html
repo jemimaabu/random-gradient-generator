@@ -14,21 +14,28 @@
 				<h1>Random Gradient Generator</h1>
 		</header>
 		<main>
-				<div id="gradient-background"></div>
-				<div id="gradient-display">
-					<p>background: linear-gradient(
-						<select name="gradient-direction" id="gradient-direction" onchange="changeDirection()">
-								<option value="to right">to right</option>
-								<option value="to left">to left</option>
-								<option value="to top">to top</option>
-								<option value="to bottom">to bottom</option>
-						</select>
-						<span id="color-1-display"></span><span id="color-1">#fff</span>, 
-						<span id="color-2-display"></span><span id="color-2">#000</span>)
-					</p>
-				</div>
-				<button id="random-gradient" onclick="randomGradient()">Random Gradient</button>
-				<button id="copy-gradient" onclick="copyGradient()">Copy Gradient</button>
+				<section id="new-gradient">
+						<div id="gradient-background"></div>
+						<div id="gradient-display">
+							<p>background: linear-gradient(
+								<select name="gradient-direction" id="gradient-direction" onchange="changeDirection()">
+										<option value="to right">to right</option>
+										<option value="to left">to left</option>
+										<option value="to top">to top</option>
+										<option value="to bottom">to bottom</option>
+								</select>
+								<span id="color-1-display"></span><span id="color-1">#fff</span>, 
+								<span id="color-2-display"></span><span id="color-2">#000</span>)
+							</p>
+						</div>
+						<button id="random-gradient" onclick="randomGradient()">Random Gradient</button>
+						<button id="copy-gradient" onclick="copyGradient()">Copy Gradient</button>
+						<button id="save-gradient" onclick="saveGradient()">Save Gradient</button>
+				</section>
+				<section id="saved-gradients">
+					<h2>Saved Gradients:</h2>
+					<div id="gradients-wrapper"></div>
+				</section>
 		</main>
   </body>
   <script src="main.js"></script>
