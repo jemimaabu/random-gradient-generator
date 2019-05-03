@@ -1,11 +1,11 @@
 /**
  * To-do:
- * Include save gradient option
  * Include copy gradient option
  * Include dropdown for gradient movement
  * Include edit option for colors
  * Include color display next to selected color
  * Include multiple gradient?
+ * Make it possible for people to name and save gradients
  */
 
 var gradientBackground = document.getElementById("gradient-background");
@@ -13,7 +13,7 @@ var gradientDisplay = document.getElementById("gradient-display");
 var gradientColor1 = getComputedStyle(document.documentElement).getPropertyValue('--color-1');
 var gradientColor2 = getComputedStyle(document.documentElement).getPropertyValue('--color-2');
 var gradientDirection = getComputedStyle(document.documentElement).getPropertyValue('--gradient-direction');
-
+console.log(gradientDisplay.innerText)
 function randomColorGenerator() {
     var characters = ["a","b","c","d","e","f",0,1,2,3,4,5,6,7,8,9];
     var randomColorArray = [];

@@ -28,6 +28,20 @@ main, header {
 	font-size: inherit;
 }
 
+#color-1-display, #color-2-display {
+	width: 0.8em;
+	height: 0.8em;
+	margin:0 0.2em;
+	display: inline-block;
+}
+
+#color-1-display {
+	background-color: var(--color-1);
+}
+
+#color-2-display {
+	background-color: var(--color-2);
+}
 /* Button Styling */
 button {
   display: inline-block;
