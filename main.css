@@ -13,6 +13,15 @@ body {
   margin: 0;
 }
 
+.github-corner:hover .octo-arm {
+	animation: octocat-wave 560ms ease-in-out
+}
+
+.github-corner svg {
+	fill: var(--color-1);
+	color: var(--color-2);
+}
+
 main, header {
 	padding: 0 1em;
 }
@@ -143,3 +152,15 @@ button:active {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+
+@keyframes octocat-wave {
+	0%, 100% {
+		transform:rotate(0)
+	}
+	20%, 60% {
+		transform:rotate(-25deg)
+	}
+	40%, 80% {
+		transform:rotate(10deg)
+	}
+} 
