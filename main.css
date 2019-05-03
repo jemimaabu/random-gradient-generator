@@ -1,15 +1,31 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-}
-body {
   font-family: "Lato", sans-serif;
+}
+
+:root {
+	--color-1: #eee;
+	--color-2: #000;
+	--gradient-direction: to right;
+}
+
+body {
+  margin: 0;
+}
+
+main, header {
+	padding: 0 1em;
 }
 
 #gradient-background {
   height: 50vh;
-  background: linear-gradient(to right, #fff, #000);
+	background: linear-gradient(var(--gradient-direction), var(--color-1), var(--color-2));
+	transition: .5s;
+}
+
+#gradient-direction {
+	border: none;
+	font-size: inherit;
 }
 
 /* Button Styling */
@@ -37,9 +53,5 @@ button:hover {
 
 button:active {
   transform: scale(0.97);
-}
-
-#random-gradient {
-  margin: 5px 0 5px 5px;
 }
 /* ----------- */

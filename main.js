@@ -10,6 +10,9 @@
 
 var gradientBackground = document.getElementById("gradient-background");
 var gradientDisplay = document.getElementById("gradient-display");
+var gradientColor1 = getComputedStyle(document.documentElement).getPropertyValue('--color-1');
+var gradientColor2 = getComputedStyle(document.documentElement).getPropertyValue('--color-2');
+var gradientDirection = getComputedStyle(document.documentElement).getPropertyValue('--gradient-direction');
 
 function randomColorGenerator() {
     var characters = ["a","b","c","d","e","f",0,1,2,3,4,5,6,7,8,9];
@@ -25,7 +28,13 @@ function randomGradient() {
     var color1 = randomColorGenerator();
     var color2 = randomColorGenerator();
 
-    gradientBackground.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+    document.documentElement.style.setProperty('--color-1', color1);
+    document.documentElement.style.setProperty('--color-2', color2);
     document.getElementById("color-1").innerHTML = color1;
     document.getElementById("color-2").innerHTML = color2;
+}
+
+function changeDirection() {
+    var direction = document.getElementById("gradient-direction").value;
+    document.documentElement.style.setProperty('--gradient-direction', direction);
 }
