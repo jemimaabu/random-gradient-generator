@@ -1,15 +1,67 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-}
-body {
   font-family: "Lato", sans-serif;
+}
+
+:root {
+	--color-1: #eee;
+	--color-2: #000;
+	--gradient-direction: to right;
+}
+
+body {
+  margin: 0;
+}
+
+.github-corner:hover .octo-arm {
+	animation: octocat-wave 560ms ease-in-out
+}
+
+.github-corner svg {
+	fill: var(--color-1);
+	color: var(--color-2);
+}
+
+main, header {
+	padding: 0 1em;
+}
+
+header h1 {
+	margin-bottom: 0.47em;
+}
+
+#instructions {
+	margin: 1em 0;
+}
+
+#instructions-list {
+	margin-top: 0.5em;
 }
 
 #gradient-background {
   height: 50vh;
-  background: linear-gradient(to right, #fff, #000);
+	background: linear-gradient(var(--gradient-direction), var(--color-1), var(--color-2));
+	transition: .5s;
+}
+
+#gradient-direction {
+	border: none;
+	font-size: inherit;
+}
+
+#color-1-display, #color-2-display {
+	width: 0.8em;
+	height: 0.8em;
+	margin:0 0.2em;
+	display: inline-block;
+}
+
+#color-1-display {
+	background-color: var(--color-1);
+}
+
+#color-2-display {
+	background-color: var(--color-2);
 }
 
 /* Button Styling */
@@ -17,29 +69,98 @@ button {
   display: inline-block;
   border: none;
   padding: 1rem 2rem;
-  margin: 0;
+	margin: 0.2em 0.2em 0.2em 0em;
   text-decoration: none;
-  background-image: linear-gradient(rgb(0, 140, 255), rgb(0, 140, 255));
   color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
   outline: none;
-  border-radius: 3px;
   transition: all 0.3s ease;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-button:hover {
+#random-gradient {
+  background-image: linear-gradient(rgb(0, 140, 255), rgb(0, 140, 255));
+}
+
+#random-gradient:hover {
   background-image: linear-gradient(rgb(0, 162, 255), rgb(0, 140, 255));
+}
+
+#copy-gradient {
+  background-image: linear-gradient(rgb(255, 70, 70), rgb(255, 70, 70));
+}
+
+#copy-gradient:hover {
+  background-image: linear-gradient(rgb(255, 80, 80), rgb(255, 70, 70));
+}
+
+#save-gradient {
+  background-image: linear-gradient(rgb(0, 255, 140), rgb(0, 255, 140));
+}
+
+#save-gradient:hover {
+  background-image: linear-gradient(rgb(0, 255, 162), rgb(0, 255, 140));
 }
 
 button:active {
   transform: scale(0.97);
 }
-
-#random-gradient {
-  margin: 5px 0 5px 5px;
-}
 /* ----------- */
+
+#gradients-wrapper {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 1em;
+}
+
+.gradient {
+	height: 10em;
+	cursor: pointer;
+}
+
+.gradient-overlay {
+	height: 100%;
+  text-align: center;
+	background: inherit;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	filter: invert(1) grayscale(1) contrast(10);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	opacity: 0;
+	transition: opacity .5s;
+}
+
+.gradient:hover .gradient-overlay {
+	opacity: 0.8;
+}
+
+@media (max-width: 920px) {
+  #gradients-wrapper {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+  #gradients-wrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@keyframes octocat-wave {
+	0%, 100% {
+		transform:rotate(0)
+	}
+	20%, 60% {
+		transform:rotate(-25deg)
+	}
+	40%, 80% {
+		transform:rotate(10deg)
+	}
+} 
