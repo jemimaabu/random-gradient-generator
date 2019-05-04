@@ -1,67 +1,70 @@
 * {
   box-sizing: border-box;
-  font-family: "Lato", sans-serif;
 }
 
 :root {
-	--color-1: #eee;
-	--color-2: #000;
-	--gradient-direction: to right;
+  --color-1: #eee;
+  --color-2: #000;
+  --gradient-direction: to right;
 }
 
 body {
   margin: 0;
+  /* Font family should be assigned in body selector, for inheritance reasons */
+  font-family: "Lato", sans-serif;
 }
 
 .github-corner:hover .octo-arm {
-	animation: octocat-wave 560ms ease-in-out
+  animation: octocat-wave 560ms ease-in-out;
 }
 
 .github-corner svg {
-	fill: var(--color-1);
-	color: var(--color-2);
+  fill: var(--color-1);
+  color: var(--color-2);
 }
 
-main, header {
-	padding: 0 1em;
+main,
+header {
+  padding: 0 1em;
 }
 
 header h1 {
-	margin-bottom: 0.47em;
+  margin-bottom: 0.47em;
 }
 
 #instructions {
-	margin: 1em 0;
+  margin: 1em 0;
 }
 
 #instructions-list {
-	margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 
 #gradient-background {
   height: 50vh;
-	background: linear-gradient(var(--gradient-direction), var(--color-1), var(--color-2));
-	transition: .5s;
+  background: linear-gradient(var(--gradient-direction), var(--color-1), var(--color-2));
+  transition: 0.5s;
 }
 
 #gradient-direction {
-	border: none;
-	font-size: inherit;
+  border: none;
+  font-size: inherit;
 }
 
-#color-1-display, #color-2-display {
-	width: 0.8em;
-	height: 0.8em;
-	margin:0 0.2em;
-	display: inline-block;
+#color-1-display,
+#color-2-display {
+  width: 0.8em;
+  height: 0.8em;
+  margin: 0 0.2em;
+  display: inline-block;
 }
 
 #color-1-display {
-	background-color: var(--color-1);
+  background-color: var(--color-1);
 }
 
 #color-2-display {
-	background-color: var(--color-2);
+  background-color: var(--color-2);
 }
 
 /* Button Styling */
@@ -69,7 +72,7 @@ button {
   display: inline-block;
   border: none;
   padding: 1rem 2rem;
-	margin: 0.2em 0.2em 0.2em 0em;
+  margin: 0.2em 0.2em 0.2em 0em;
   text-decoration: none;
   color: #ffffff;
   font-size: 1rem;
@@ -111,56 +114,73 @@ button:active {
 /* ----------- */
 
 #gradients-wrapper {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1em;
 }
 
 .gradient {
-	height: 10em;
-	cursor: pointer;
+  height: 10em;
+  cursor: pointer;
 }
 
+/* Styling for gradiet text to appear as a code block */
+.gradient-text {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  background-color: rgb(242, 245, 247);
+  font-family: "Courier New", Courier, monospace;
+}
+.gradient-text-selector {
+  color: rgb(255, 179, 65);
+}
+.gradient-text-rule {
+  color: rgb(4, 190, 223);
+}
+/* ----------- */
 .gradient-overlay {
-	height: 100%;
+  height: 100%;
   text-align: center;
-	background: inherit;
-	-webkit-background-clip: text;
-	background-clip: text;
-	color: transparent;
-	filter: invert(1) grayscale(1) contrast(10);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-weight: 600;
-	opacity: 0;
-	transition: opacity .5s;
+  background: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: invert(1) grayscale(1) contrast(10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
 .gradient:hover .gradient-overlay {
-	opacity: 0.8;
+  opacity: 0.8;
 }
 
 @media (max-width: 920px) {
   #gradients-wrapper {
-		grid-template-columns: repeat(3, 1fr);
-	}
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
   #gradients-wrapper {
-		grid-template-columns: repeat(2, 1fr);
-	}
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @keyframes octocat-wave {
-	0%, 100% {
-		transform:rotate(0)
-	}
-	20%, 60% {
-		transform:rotate(-25deg)
-	}
-	40%, 80% {
-		transform:rotate(10deg)
-	}
-} 
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
