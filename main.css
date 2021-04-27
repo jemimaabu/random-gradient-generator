@@ -29,7 +29,7 @@ header {
 }
 
 header h1 {
-  margin-bottom: 0.47em;
+  margin-bottom: 0.5em;
 }
 
 #instructions {
@@ -76,6 +76,8 @@ button {
   display: inline-block;
   border: none;
   padding: 1rem 2rem;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  min-width: 12.15em;
   border-radius: 0.25em;
   text-decoration: none;
   color: #ffffff;
@@ -85,10 +87,6 @@ button {
   transition: all 0.3s ease;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
-
-button + button {
-  margin-left: 0.5em;
 }
 
 #random-gradient {
